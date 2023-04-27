@@ -7,9 +7,12 @@
     <div class="md:flex md:items-center mx-5">
         <div class="md:w-1/2 px-10">
             <form action="#" id="dropzone"
-                class="dropzone border-dashed border-2 w-full h-72 rounded flex flex-col justify-center items-center bg-transparent">
-
+                class="dropzone border-dashed border-2 w-full
+                 h-72 rounded flex flex-col justify-center items-center bg-transparent">
+            @csrf
+            
             </form>
+
         </div>
         <div class="md:w-1/2 px-10 w-4/12 bg-white p-6 rounded-lg shadow-xl">
             <form action="" method="POST">
