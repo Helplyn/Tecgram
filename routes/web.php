@@ -5,6 +5,7 @@ use App\Http\Controllers\MuroController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\auth\RegisterController;
+use App\Http\Controllers\auth\ImagenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,6 @@ route::post('/logout',[LogoutController::class,'store'])->name('logout.store');
 route::get('/{user:username}', [MuroController::class,'index'])->name('muro.index');
 
 route::get('muro/create', [MuroController::class,'create'])->name('muro.create');
+
+route::post('/imagen',[ImagenController::class,'store'])->name('imagen.store');
 
