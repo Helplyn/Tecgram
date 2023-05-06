@@ -3,14 +3,19 @@
     Crear nueva publicación
 @endsection
 
+@push('styles')
+<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />o4
+@endpush
+
 @section('contenido')
     <div class="md:flex md:items-center mx-5">
         <div class="md:w-1/2 px-10">
-            <form action="#" id="dropzone"
+            <form action="{{route('imagen.store')}}" id="dropzone" method="POST" 
                 class="dropzone border-dashed border-2 w-full
-                 h-72 rounded flex flex-col justify-center items-center bg-transparent">
+                 h-72 rounded flex flex-col justify-center 
+                 items-center bg-transparent" enctype="multipart/form-data">
             @csrf
-            
+
             </form>
 
         </div>
