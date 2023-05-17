@@ -2,24 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
-use Symfony\Component\Console\Input\Input;
 
 class ImagenController extends Controller
 {
     public function store(Request $request)
     {
-        $imagen = $request->file("file");
-        $nombreimagen = Str::uuid().".".$imagen->extension();
-        $imagenservidor = Image::make($imagen);
-        $imagenservidor->fit(500,500);
+        $imagen = $request->file('file');
 
-        $imagenruta = public_path('uploads')."/".$nombreimagen;
+        $nombreImagen = Str::uuid() . "." . $imagen->extension();
 
-        $imagenservidor->save($imagenruta);
+        $imagenServidor = Image::make($imagen);
+        $imagenServidor->fit(500, 500);
 
-        return response()->json(['imagen'=>$imagen->extension()]);
+        $imagenRuta = public_path('uploads') . '/' . $nombreImagen;
+
+        $imagenServidor->save($imagenRuta);
+
+        return response()->json(['imagen' => $nombreImagen]);
     }
 }

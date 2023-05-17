@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MuroController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\imagencontroller;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\auth\RegisterController;
-use App\Http\Controllers\auth\ImagenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +36,6 @@ route::get('/{user:username}', [MuroController::class,'index'])->name('muro.inde
 
 route::get('muro/create', [MuroController::class,'create'])->name('muro.create');
 
-route::post('/imagen',[ImagenController::class,'store'])->name('imagen.store');
+route::post('/imagen',[imagencontroller::class,'store'])->name('imagen.store');
 
+route::post('/muro',[MuroController::class,'store'])->name('muro.store');
